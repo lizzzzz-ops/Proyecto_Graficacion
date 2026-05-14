@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- FONDO FUTURISTA -->
+    <!-- FONDO -->
 
     <div class="grid"></div>
 
@@ -33,12 +33,15 @@
 
     </header>
 
-    <!-- MENU LATERAL -->
+    <!-- MENU -->
 
     <div class="sidebar" id="sidebar">
 
-        <button class="btn-inicio" onclick="window.location.href='index.html'">
+        <button class="btn-inicio"
+                onclick="window.location.href='index.html'">
+
             🏠 Inicio
+
         </button>
 
         <h2>MENÚ</h2>
@@ -55,7 +58,7 @@
             📸 Galería
         </a>
 
-        <a href="#">
+        <a href="#" id="btnAsistente">
             🤖 Asistente Virtual
         </a>
 
@@ -69,131 +72,7 @@
 
     </div>
 
-    <!-- PANEL CARRERAS -->
-
-    <div class="carreras-panel" id="carrerasPanel">
-
-        <h2>
-            🎓 Carreras Disponibles
-        </h2>
-
-        <div class="carrera">
-
-            <h3>
-                Ingeniería en Sistemas Computacionales
-            </h3>
-
-            <p>
-                Forma expertos en software, redes y bases de datos. Campo laboral: desarrollo de aplicaciones, ciberseguridad, inteligencia artificial, soporte técnico.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Contaduría Pública
-            </h3>
-
-            <p>
-                Estudia contabilidad, auditoría y temas fiscales. Campo laboral: despachos contables, auditoría, finanzas corporativas, sector público.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Administración
-            </h3>
-
-            <p>
-                Se ocupa de organizar recursos humanos y financieros para lograr objetivos. Campo laboral: dirección de empresas, recursos humanos, planeación estratégica.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Ingeniería Industrial
-            </h3>
-
-            <p>
-                Estudia métodos para mejorar la productividad y reducir costos en empresas. Campo laboral: manufactura, logística, consultoría, gestión de calidad.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Ingeniería Mecatrónica
-            </h3>
-
-            <p>
-                Integra mecánica, electrónica y programación para crear sistemas automatizados y robots. Campo laboral: industria automotriz, robótica, automatización de procesos, domótica.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Ingeniería Mecánica
-            </h3>
-
-            <p>
-                Se centra en el diseño y mantenimiento de motores, máquinas y sistemas energéticos. Campo laboral: sector automotriz, aeronáutico, energético, mantenimiento industrial.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Gestión Empresarial
-            </h3>
-
-            <p>
-                Prepara profesionales para dirigir proyectos, coordinar equipos y tomar decisiones estratégicas. Campo laboral: administración de empresas, consultoría, emprendimiento.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Desarrollo Sustentable
-            </h3>
-
-            <p>
-                Busca soluciones para equilibrar crecimiento económico con cuidado ambiental. Campo laboral: energías renovables, consultoría ambiental, políticas públicas.
-            </p>
-
-        </div>
-
-        <div class="carrera">
-
-            <h3>
-                Industrias Alimentarias
-            </h3>
-
-            <p>
-                Se centra en la producción, innovación y control de calidad de alimentos. Campo laboral: empresas de alimentos, investigación nutricional, control sanitario.
-            </p>
-
-        </div>
-
-        <button id="cerrarCarreras">
-
-            Cerrar
-
-        </button>
-
-    </div>
-
-    <!-- HERO -->
+    <!-- HERO PRINCIPAL -->
 
     <section class="hero">
 
@@ -223,11 +102,219 @@
 
     <div class="creditos">
 
-        Proyecto desarrollado por Lizbeth Nayeli Valencia y Karmen Michelle Carrazco Fuentes
+        Proyecto desarrollado por Lizbeth Nayeli Valencia
+        y Karmen Michelle Carrazco Fuentes
 
     </div>
 
-    <script src="./script.js?v=2"></script>
+    <!-- ================================= -->
+    <!-- PANEL CARRERAS -->
+    <!-- ================================= -->
+
+    <div class="panel-carreras" id="carrerasPanel">
+
+        <div class="panel-content">
+
+            <h2>
+                🎓 Carreras Disponibles
+            </h2>
+
+            <div class="carrera">
+
+                <h3>
+                    Ingeniería en Sistemas Computacionales
+                </h3>
+
+                <p>
+                    Forma expertos en software, redes y bases de datos.
+                    Campo laboral: desarrollo de aplicaciones,
+                    ciberseguridad, inteligencia artificial, soporte técnico.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Contaduría Pública
+                </h3>
+
+                <p>
+                    Estudia contabilidad, auditoría y temas fiscales.
+                    Campo laboral: despachos contables, auditoría,
+                    finanzas corporativas, sector público.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Administración
+                </h3>
+
+                <p>
+                    Se ocupa de organizar recursos humanos y financieros
+                    para lograr objetivos.
+                    Campo laboral: dirección de empresas,
+                    recursos humanos, planeación estratégica.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Ingeniería Industrial
+                </h3>
+
+                <p>
+                    Estudia métodos para mejorar la productividad
+                    y reducir costos en empresas.
+                    Campo laboral: manufactura, logística,
+                    consultoría, gestión de calidad.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Ingeniería Mecatrónica
+                </h3>
+
+                <p>
+                    Integra mecánica, electrónica y programación
+                    para crear sistemas automatizados y robots.
+                    Campo laboral: industria automotriz,
+                    robótica, automatización de procesos, domótica.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Ingeniería Mecánica
+                </h3>
+
+                <p>
+                    Se centra en el diseño y mantenimiento de motores,
+                    máquinas y sistemas energéticos.
+                    Campo laboral: sector automotriz,
+                    aeronáutico, energético, mantenimiento industrial.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Gestión Empresarial
+                </h3>
+
+                <p>
+                    Prepara profesionales para dirigir proyectos,
+                    coordinar equipos y tomar decisiones estratégicas.
+                    Campo laboral: administración de empresas,
+                    consultoría, emprendimiento.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Desarrollo Sustentable
+                </h3>
+
+                <p>
+                    Busca soluciones para equilibrar crecimiento económico
+                    con cuidado ambiental.
+                    Campo laboral: energías renovables,
+                    consultoría ambiental, políticas públicas.
+                </p>
+
+            </div>
+
+            <div class="carrera">
+
+                <h3>
+                    Industrias Alimentarias
+                </h3>
+
+                <p>
+                    Se centra en la producción, innovación y control
+                    de calidad de alimentos.
+                    Campo laboral: empresas de alimentos,
+                    investigación nutricional, control sanitario.
+                </p>
+
+            </div>
+
+            <button id="cerrarCarreras" class="cerrar-btn">
+
+                Cerrar
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+    <!-- CHAT IA -->
+    <!-- ================================= -->
+
+    <div id="chatContainer" class="chat-modal">
+
+        <div class="chat-box">
+
+            <div class="chat-header">
+
+                <button id="volverInicio" class="volver-btn">
+                    ⬅ Volver al inicio
+                </button>
+
+                <div class="chat-title">
+                    🤖 Asistente Virtual ITHUA
+                </div>
+
+                <button id="cerrarChat" class="cerrar-chat">
+                    ✖
+                </button>
+
+            </div>
+
+            <div id="chatMessages" class="chat-messages">
+
+                <div class="message bot-message">
+
+                    👋 ¡Hola! Soy el asistente virtual del ITHUA.
+                    Puedo ayudarte a elegir una carrera,
+                    resolver dudas y orientarte según tus gustos.
+
+                </div>
+
+            </div>
+
+            <div class="chat-input-area">
+
+                <input type="text"
+                       id="userInput"
+                       placeholder="Pregunta algo sobre las carreras...">
+
+                <button id="sendBtn">
+                    Enviar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./script.js?v=5"></script>
 
 </body>
 
