@@ -37,8 +37,7 @@
 
     <div class="sidebar" id="sidebar">
 
-        <button class="btn-inicio"
-                onclick="window.location.href='index.html'">
+        <button class="btn-inicio" onclick="window.location.href='index.html'">
 
             🏠 Inicio
 
@@ -50,23 +49,25 @@
             🎓 Explorar Carreras
         </a>
 
-        <a href="#">
+        <a href="campus.html" id="btnCampus">
             🏫 Conocer Campus
-        </a>
-
-        <a href="#">
-            📸 Galería
-        </a>
-
-        <a href="#" id="btnAsistente">
-            🤖 Asistente Virtual
         </a>
 
         <a href="#">
             🛰️ Tour Virtual
         </a>
 
-        <a href="#">
+        <a href="#" id="btnGaleria">
+            🏅 Actividades extraescolares
+        </a>
+
+        <a href="#" id="btnAsistente">
+            🤖 Asistente Virtual
+        </a>
+
+
+
+        <a href="#" id="btnInformacion" class="menu-item">
             ℹ️ Información
         </a>
 
@@ -74,7 +75,7 @@
 
     <!-- HERO PRINCIPAL -->
 
-    <section class="hero">
+    <section class="hero" id="hero">
 
         <img src="img/pelicano.png" class="pelicano">
 
@@ -92,8 +93,10 @@
             Instituto Tecnológico de Huatabampo
         </p>
 
-        <button class="start-btn">
+        <button class="start-btn" onclick="window.location.href='campus.html'">
+
             🗺️ INICIAR RECORRIDO
+
         </button>
 
     </section>
@@ -102,8 +105,7 @@
 
     <div class="creditos">
 
-        Proyecto desarrollado por Lizbeth Nayeli Valencia
-        y Karmen Michelle Carrazco Fuentes
+        Proyecto desarrollado por Lizbeth Nayeli Valencia   y Karmen Michelle Carrazco Fuentes
 
     </div>
 
@@ -261,7 +263,65 @@
         </div>
 
     </div>
+    <!-- ================================= -->
+    <!-- PANEL INFORMACIÓN -->
+    <!-- ================================= -->
 
+    <div class="panel-informacion" id="informacionPanel">
+
+        <div class="panel-content">
+
+            <h2>ℹ️ Información de Contacto</h2>
+
+            <div class="info-grid">
+
+                <a class="info-card" href="tel:+526474261477">
+                    <div class="icono-box">📞</div>
+                    <div class="card-contenido">
+                        <span class="card-etiqueta">Teléfono</span>
+                        <span class="card-valor">(647) 426-1477</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="mailto:aspirante@huatabampo.tecnm.mx">
+                    <div class="icono-box">✉️</div>
+                    <div class="card-contenido">
+                        <span class="card-etiqueta">Correo electrónico</span>
+                        <span class="card-valor">aspirante@huatabampo.tecnm.mx</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.facebook.com/share/1ALWszefoW/?mibextid=wwXIfr" target="_blank">
+                    <div class="icono-box">📘</div>
+                    <div class="card-contenido">
+                        <span class="card-etiqueta">Facebook</span>
+                        <span class="card-valor">ITHUA Oficial</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://huatabampo.tecnm.mx" target="_blank">
+                    <div class="icono-box">🌐</div>
+                    <div class="card-contenido">
+                        <span class="card-etiqueta">Página web</span>
+                        <span class="card-valor">huatabampo.tecnm.mx</span>
+                    </div>
+                </a>
+
+                <div class="info-card info-card--full">
+                    <div class="icono-box">📍</div>
+                    <div class="card-contenido">
+                        <span class="card-etiqueta">Dirección</span>
+                        <span class="card-valor">Blvd. Tecnológico S/N, Huatabampo, Sonora, México, C.P. 85900</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <button id="cerrarInformacion" class="cerrar-btn">Cerrar</button>
+
+        </div>
+
+    </div>
     <!-- ================================= -->
     <!-- CHAT IA -->
     <!-- ================================= -->
@@ -309,6 +369,122 @@
                 </button>
 
             </div>
+
+        </div>
+
+    </div>
+    <!-- ================================= -->
+    <!-- PANEL ACTIVIDADES EXTRAESCOLARES -->
+    <!-- ================================= -->
+
+    <div class="panel-actividades" id="actividadesPanel">
+
+        <div class="panel-content">
+
+            <h2>🏅 Actividades Extraescolares</h2>
+            <p class="panel-subtitulo">Conoce las actividades deportivas y culturales del ITHUA</p>
+
+            <!-- DEPORTIVAS -->
+            <div class="actividades-seccion">
+
+                <div class="actividades-titulo">
+                    <span class="actividades-icono">⚽</span>
+                    Actividades Deportivas
+                </div>
+
+                <div class="actividades-grid">
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">⚾</div>
+                        <div class="actividad-info">
+                            <h4>Béisbol</h4>
+                            <p>Equipo representativo del ITHUA que participa en torneos regionales y estatales del Tecnológico Nacional de México.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">⚽</div>
+                        <div class="actividad-info">
+                            <h4>Fútbol</h4>
+                            <p>Equipo varonil y femenil que compite en ligas interinstitucionales fomentando el trabajo en equipo y la disciplina.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">🏀</div>
+                        <div class="actividad-info">
+                            <h4>Básquetbol</h4>
+                            <p>Disciplina que desarrolla velocidad, coordinación y estrategia. Participa en competencias del TecNM a nivel regional.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">🏐</div>
+                        <div class="actividad-info">
+                            <h4>Voleibol</h4>
+                            <p>Equipo activo con participación en torneos institucionales. Promueve la comunicación y el compañerismo entre alumnos.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card actividad-card--full">
+                        <div class="actividad-icono">♟️</div>
+                        <div class="actividad-info">
+                            <h4>Ajedrez</h4>
+                            <p>Actividad que fortalece el pensamiento lógico, la concentración y la toma de decisiones. Representación en olimpiadas del conocimiento.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CULTURALES -->
+            <div class="actividades-seccion">
+
+                <div class="actividades-titulo">
+                    <span class="actividades-icono">🎭</span>
+                    Actividades Culturales
+                </div>
+
+                <div class="actividades-grid">
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">💃</div>
+                        <div class="actividad-info">
+                            <h4>Danza</h4>
+                            <p>Grupo de danza folclórica que representa la cultura regional en festivales, eventos institucionales y competencias estatales.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">🥁</div>
+                        <div class="actividad-info">
+                            <h4>Banda de Guerra</h4>
+                            <p>Agrupación musical marcial que representa al instituto en desfiles y ceremonias cívicas con disciplina y orgullo institucional.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">🚩</div>
+                        <div class="actividad-info">
+                            <h4>Escolta</h4>
+                            <p>Cuerpo de honor encargado de rendir honores a la bandera nacional en ceremonias cívicas y eventos oficiales del plantel.</p>
+                        </div>
+                    </div>
+
+                    <div class="actividad-card">
+                        <div class="actividad-icono">🌟</div>
+                        <div class="actividad-info">
+                            <h4>Edecán</h4>
+                            <p>Grupo de protocolo que representa al ITHUA en eventos académicos, exposiciones y visitas institucionales con porte y profesionalismo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button id="cerrarActividades" class="cerrar-btn">Cerrar</button>
 
         </div>
 

@@ -1,0 +1,235 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #060d1a;
+    color: #fff;
+    min-height: 100vh;
+}
+
+.grid {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,204,0,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,204,0,0.04) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 48px;
+    background: rgba(6,13,26,0.97);
+    border-bottom: 1px solid rgba(255,204,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.logo {
+    color: #FFCC00;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.btn-volver {
+    background: rgba(255,204,0,0.1);
+    border: 1px solid rgba(255,204,0,0.3);
+    color: #FFCC00;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-volver:hover { background: rgba(255,204,0,0.25); }
+
+.campus-main {
+    position: relative;
+    z-index: 1;
+    padding: 64px 20px 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.campus-titulo {
+    padding: 16px 0 12px;
+}
+.campus-titulo h1 {
+    color: #FFCC00;
+    font-size: 30PX;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.campus-titulo p {
+    color: #888;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* 50 / 50 */
+.campus-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.map-contenedor {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,204,0,0.2);
+}
+
+.campus-img {
+    width: 100%;
+    display: block;
+}
+
+.puntos-overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.punto-campus {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background: #FFCC00;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s, background 0.15s;
+    z-index: 10;
+}
+.punto-campus:hover {
+    transform: translate(-50%, -50%) scale(1.3);
+    background: #fff;
+}
+.punto-campus.activo {
+    background: #fff;
+    border-color: #FFCC00;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: sticky;
+    top: 64px;
+}
+
+.mascota-bar {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,204,0,0.15);
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mascota-mini {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.bocadillo {
+    background: rgba(255,204,0,0.08);
+    border: 1px solid rgba(255,204,0,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: #ccc;
+    flex: 1;
+    line-height: 1.5;
+}
+.bocadillo strong { color: #FFCC00; }
+
+.btn-voz {
+    background: rgba(255,204,0,0.15);
+    border: 1px solid rgba(255,204,0,0.3);
+    color: #FFCC00;
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+.btn-voz:hover { background: rgba(255,204,0,0.3); }
+
+.info-area { display: none; }
+.info-area.visible { display: block; }
+
+.info-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,204,0,0.25);
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+.info-card h3 {
+    color: #FFCC00;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.area-foto {
+    width: 100%;
+    height: 420px;
+    background: rgba(255,255,255,0.04);
+    border: 0.5px solid rgba(255,204,0,0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+.area-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.info-card p {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.cerrar-info {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #FFCC00;
+    color: #000;
+    font-size: 15px;
+    font-wei

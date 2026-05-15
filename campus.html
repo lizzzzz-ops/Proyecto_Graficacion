@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus ITHUA</title>
+    <link rel="stylesheet" href="campus.css">
+</head>
+<body>
+    <div class="grid"></div>
+    <header class="topbar">
+        <div class="logo">🟡 GUÍA VIRTUAL ITHUA</div>
+        <button onclick="window.location.href='index.html'" class="btn-volver">⬅ Volver</button>
+    </header>
+
+    <main class="campus-main">
+        <div class="campus-titulo">
+            <h1>🏫 Conocer Campus</h1>
+            <p>Toca un número en el mapa para explorar cada área</p>
+        </div>
+
+        <div class="campus-layout">
+
+            <!-- IZQUIERDA 50%: Mapa -->
+            <div class="map-contenedor">
+                <img src="img/campus.png" class="campus-img" alt="Croquis Campus ITHUA">
+                <div class="puntos-overlay">
+                    <div class="punto-campus" data-id="1" style="left:22%; top:24%">1</div>
+                    <div class="punto-campus" data-id="2" style="left:10%; top:43%">2</div>
+                    <div class="punto-campus" data-id="3" style="left:32%; top:44%">3</div>
+                    <div class="punto-campus" data-id="4" style="left:22%; top:61%">4</div>
+                    <div class="punto-campus" data-id="5" style="left:54%; top:51%">5</div>
+                    <div class="punto-campus" data-id="6" style="left:72%; top:33%">6</div>
+                    <div class="punto-campus" data-id="7" style="left:89%; top:24%">7</div>
+                    <div class="punto-campus" data-id="8" style="left:72%; top:54%">8</div>
+                    <div class="punto-campus" data-id="9" style="left:89%; top:54%">9</div>
+                    <div class="punto-campus" data-id="10" style="left:85%; top:63%">10</div>
+                    <div class="punto-campus" data-id="11" style="left:57%; top:71%">11</div>
+                    <div class="punto-campus" data-id="12" style="left:69%; top:71%">12</div>
+                    <div class="punto-campus" data-id="13" style="left:87%; top:71%">13</div>
+                    <div class="punto-campus" data-id="14" style="left:62%; top:85%">14</div>
+                    <div class="punto-campus" data-id="15" style="left:76%; top:84%">15</div>
+                    <div class="punto-campus" data-id="16" style="left:91%; top:83%">16</div>
+                </div>
+            </div>
+
+            <!-- DERECHA 50%: Mascota + Info -->
+            <div class="columna-derecha">
+                <div class="mascota-bar">
+                    <img src="img/pelicano.png" class="mascota-mini" alt="Mascota">
+                    <div class="bocadillo" id="bocadillo">
+                        ¡Hola! Soy tu guía. <strong>Toca un número</strong> para conocer cada área del campus.
+                    </div>
+                    <button class="btn-voz" id="btnVoz" title="Repetir">🔊</button>
+                </div>
+
+                <div class="info-area" id="infoArea">
+                    <div class="info-card">
+                        <h3 id="areaNombre"></h3>
+                        <div class="area-foto" id="areaFoto">
+                            <span>📷 Foto próximamente</span>
+                        </div>
+                        <p id="areaDesc"></p>
+                        <button class="cerrar-info" id="cerrarInfo">✖ Cerrar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
