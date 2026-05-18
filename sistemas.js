@@ -34,6 +34,16 @@ const lugares = [
         titulo: "Laboratorio Multifuncional",
 
         descripcion:
+            "Laboratorio utilizado para que los alumnos del area de mecanica y mecatronica realicen actividades practicas y proyectos tecnologicos.",
+
+        imagen:
+            "img/edificio-sistemas/laboratorio2.jpg"
+    },
+
+    {
+        titulo: "Laboratorio de Administracion de Base de Datos",
+
+        descripcion:
             "Espacio utilizado para proyectos y actividades practicas.",
 
         imagen:
@@ -41,10 +51,10 @@ const lugares = [
     },
 
     {
-        titulo: "Aula 33",
+        titulo: "Aula y Laboratorio 33",
 
         descripcion:
-            "Salon donde se imparten clases teoricas y practicas.",
+            "Salon donde se imparten clases teoricas y practicas del area de sistemas.",
 
         imagen:
             "img/edificio-sistemas/aula33.jpg"
@@ -58,6 +68,35 @@ const lugares = [
 
         imagen:
             "img/edificio-sistemas/aula35.jpg"
+    },
+    {
+        titulo: "Aula 32",
+
+        descripcion:
+            "Salon utilizado para clases academicas y actividades escolares.",
+
+        imagen:
+            "img/edificio-sistemas/aula32.jpg"
+    },
+
+    {
+        titulo: "Aula 34",
+
+        descripcion:
+            "Area utilizada para clases teoricas y trabajos colaborativos.",
+
+        imagen:
+            "img/edificio-sistemas/aula34.jpg"
+    },
+
+    {
+        titulo: "Departamento de Sistemas",
+
+        descripcion:
+            "Oficina principal donde se realizan actividades administrativas y academicas del area de Sistemas.",
+
+        imagen:
+            "img/edificio-sistemas/departamentodesistemas.jpg"
     },
 
     {
@@ -104,10 +143,10 @@ const lugares = [
         titulo: "Academia Peopleware",
 
         descripcion:
-            "Area donde se realizan actividades academicas y tecnologicas.",
+            "Sala de estudio donde se realizan actividades academicas y tecnologicas.",
 
         imagen:
-            "img/edificio-sistemas/academia_peopleware.jpg"
+            "img/edificio-sistemas/academia_peoplewar.jpg"
     },
 
     {
