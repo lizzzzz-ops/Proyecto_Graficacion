@@ -241,7 +241,7 @@ body {
 .panel-content {
     width: 58%;
     max-width: 700px;
-    height: 80vh;
+    max-height: 80vh;
     overflow-y: auto;
     margin: auto;
     background: #02061f;
@@ -300,7 +300,7 @@ body {
 
 #cerrarCarreras {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
     background: linear-gradient(90deg, #ffd000, #ffb300);
     color: black;
     border: none;
@@ -309,7 +309,6 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
     #cerrarCarreras:hover {
