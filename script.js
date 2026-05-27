@@ -314,7 +314,7 @@ if (actividadesPanel) {
 const areasCampus = {
     1: { nombre: "Entrada / Cancha", desc: "Acceso principal del ITHUA con cancha deportiva al aire libre usada en actividades físicas y recreativas.", voz: "Bienvenido a la entrada principal del ITHUA. Aquí encontrarás la cancha deportiva al aire libre.", foto: "img/campus/entrada.jpg" },
     2: { nombre: "Área de Contabilidad y Administración", desc: "Edificio donde se imparten Contaduría Pública y Administración, con aulas equipadas y espacios de estudio.", voz: "Estás en el área de Contabilidad y Administración, donde se forman los futuros contadores y administradores.", foto: "img/campus/contabilidad.jpg" },
-    3: { nombre: "Departamento Administrativo", desc: "Centro de gestión institucional del ITHUA. Trámites escolares, control escolar y servicios estudiantiles.", voz: "Este es el Departamento Administrativo, el corazón de los trámites y servicios escolares del instituto.", foto: "img/campus/admin.jpg" },
+    3: { nombre: "Departamento Administrativo", desc: "Centro de gestión institutional del ITHUA. Trámites escolares, control escolar y servicios estudiantiles.", voz: "Este es el Departamento Administrativo, el corazón de los trámites y servicios escolares del instituto.", foto: "img/campus/admin.jpg" },
     4: { nombre: "Área de Sistemas Computacionales", desc: "Laboratorios de cómputo, redes y desarrollo de software para la Ingeniería en Sistemas Computacionales.", voz: "Aquí está el área de Sistemas Computacionales, donde los futuros ingenieros aprenden programación, redes e inteligencia artificial.", foto: "img/campus/sistemas.jpg" },
     5: { nombre: "Bodega", desc: "Almacén institucional de materiales, equipo didáctico y recursos de mantenimiento del campus.", voz: "Esta es la bodega institucional, donde se resguardan materiales y equipo del campus.", foto: "img/campus/bodega.jpg" },
     6: { nombre: "Biblioteca", desc: "Centro de información con acervo físico y digital, sala de lectura y cubículos de estudio académico.", voz: "Bienvenido a la Biblioteca del ITHUA, tu espacio de conocimiento con libros, bases de datos y salas de estudio.", foto: "img/campus/biblioteca.jpg" },
@@ -358,26 +358,20 @@ if (puntosEl.length) {
             const a = areasCampus[id];
             if (!a) return;
 
-            // Marcar activo
             puntosEl.forEach(x => x.classList.remove('activo'));
             p.classList.add('activo');
 
-            // Llenar info
             areaNombre.textContent = a.nombre;
             areaDesc.textContent = a.desc;
             areaFoto.innerHTML = `<img src="${a.foto}" alt="${a.nombre}" onerror="this.parentElement.innerHTML='<span>📷 Foto próximamente</span>'">`;
 
-            // Mostrar panel
             infoArea.classList.add('visible');
 
-            // Bocadillo mascota
             bocadillo.innerHTML = `<strong>${a.nombre}:</strong> ${a.desc.substring(0, 90)}...`;
 
-            // Voz
             vozActual = a.voz;
             hablar(a.voz);
 
-            // Scroll suave
             infoArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
@@ -393,4 +387,29 @@ if (puntosEl.length) {
             if (window.speechSynthesis) window.speechSynthesis.cancel();
         });
     }
+}
+
+/* =======================================================
+   NUEVOS BOTONES DE VOLVER 
+======================================================= */
+
+const volverCarrerasTop = document.getElementById('volverCarrerasTop');
+if (volverCarrerasTop) {
+    volverCarrerasTop.addEventListener('click', function () {
+        if (cerrarCarreras) cerrarCarreras.click();
+    });
+}
+
+const volverInformacionTop = document.getElementById('volverInformacionTop');
+if (volverInformacionTop) {
+    volverInformacionTop.addEventListener('click', function () {
+        if (cerrarInformacion) cerrarInformacion.click();
+    });
+}
+
+const volverActividadesTop = document.getElementById('volverActividadesTop');
+if (volverActividadesTop) {
+    volverActividadesTop.addEventListener('click', function () {
+        if (cerrarActividades) cerrarActividades.click();
+    });
 }
