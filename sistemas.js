@@ -239,7 +239,7 @@ function hablarTexto() {
         speech.volume = 1;
 
         const voces =
-            window.speechSynthesis.getVoices();
+          speechSynthesis.getVoices();
 
         const vozMasculina =
             voces.find(v => v.name.includes("Jorge")) ||
@@ -341,6 +341,8 @@ volverBtn.addEventListener("click", () => {
 /* INICIO */
 
 mostrarLugar();
+
+speechSynthesis.onvoiceschanged = () => { };
 
 setTimeout(() => {
 
