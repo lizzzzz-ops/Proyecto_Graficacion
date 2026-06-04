@@ -1,4 +1,4 @@
-const lugares = [
+﻿const lugares = [
 
     {
         titulo: "Lobby Principal",
@@ -209,7 +209,17 @@ function mostrarLugar() {
 
 function hablarTexto() {
 
-    // detener voz anterior
+    if (hablando) {
+
+        speechSynthesis.cancel();
+
+        hablando = false;
+
+        audioBtn.innerText = "🔊";
+
+        return;
+    }
+
     window.speechSynthesis.cancel();
 
     const texto =
@@ -224,15 +234,13 @@ function hablarTexto() {
 
         speech.lang = "es-MX";
 
-        // misma configuraci�n que S� funciona
-        speech.rate = 0.9;
-        speech.pitch = 0.85;
+        speech.rate = 0.92;
+        speech.pitch = 0.95;
         speech.volume = 1;
 
         const voces =
             window.speechSynthesis.getVoices();
 
-        // EXACTAMENTE igual al campus
         const vozMasculina =
             voces.find(v => v.name.includes("Jorge")) ||
             voces.find(v => v.name.includes("Raul")) ||
@@ -248,31 +256,27 @@ function hablarTexto() {
 
         if (vozMasculina) {
 
-            speech.voice =
-                vozMasculina;
-
-            console.log(
-                "Voz usada:",
-                vozMasculina.name
-            );
+            speech.voice = vozMasculina;
         }
 
         speech.onstart = () => {
 
             hablando = true;
+
+            audioBtn.innerText = "🔇";
         };
 
         speech.onend = () => {
 
             hablando = false;
+
+            audioBtn.innerText = "🔊";
         };
 
         window.speechSynthesis.speak(speech);
 
     }, 50);
 }
-
-/* SIGUIENTE */
 
 nextBtn.addEventListener("click", () => {
 
@@ -289,10 +293,14 @@ nextBtn.addEventListener("click", () => {
 
     mostrarLugar();
 
-    hablarTexto();
-});
-/* ANTERIOR */
+    setTimeout(() => {
 
+        hablarTexto();
+
+    }, 300);
+
+});
+//ANTERIOR
 prevBtn.addEventListener("click", () => {
 
     speechSynthesis.cancel();
@@ -308,15 +316,19 @@ prevBtn.addEventListener("click", () => {
 
     mostrarLugar();
 
-    hablarTexto();
-});
-/* AUDIO */
+    setTimeout(() => {
 
+        hablarTexto();
+
+    }, 300);
+
+});
+//AUDIO
 audioBtn.addEventListener("click", () => {
 
     hablarTexto();
-});
 
+});
 /* VOLVER */
 
 volverBtn.addEventListener("click", () => {
@@ -329,4 +341,9 @@ volverBtn.addEventListener("click", () => {
 /* INICIO */
 
 mostrarLugar();
-hablarTexto();
+
+setTimeout(() => {
+
+    hablarTexto();
+
+}, 1200);

@@ -338,6 +338,16 @@ const areasCampus = {
 
 let vozActual = "¡Bienvenido al recorrido virtual del ITHUA! 🦤 Soy Pelícano, la mascota del campus. Presiona cualquier número del mapa y te mostraré información de cada área.";
 
+/* =========================
+   PRESENTACION INICIAL
+========================= */
+
+const presentacionInicial =
+    "Bienvenido al Tecnológico Nacional de México campus Huatabampo. " +
+    "Yo soy Pelícano, tu guía virtual. " +
+    "Te acompañaré durante este recorrido interactivo. " +
+    "Podrás conocer las diferentes áreas del instituto, explorar el campus, descubrir nuestras carreras y visitar el edificio de Sistemas. " +
+    "Cuando estés listo, selecciona alguna de las opciones disponibles para comenzar.";
 function hablar(texto) {
     if (!window.speechSynthesis) return;
 
@@ -467,3 +477,16 @@ if (volverActividadesTop) {
         cerrarPanel(actividadesPanel);
     });
 }
+/* =========================
+  VOZ DE BIENVENIDA
+========================= */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        hablar(presentacionInicial);
+
+    }, 1200);
+
+});
