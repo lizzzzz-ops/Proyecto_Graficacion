@@ -190,6 +190,9 @@ let index = 0;
 
 let hablando = false;
 
+
+
+
 /* MOSTRAR */
 
 function mostrarLugar() {
@@ -204,43 +207,69 @@ function mostrarLugar() {
         lugares[index].descripcion;
 }
 
-/* HABLAR */
-
 function hablarTexto() {
 
-    if (hablando) {
-
-        speechSynthesis.cancel();
-
-        hablando = false;
-
-        return;
-    }
+    // detener voz anterior
+    window.speechSynthesis.cancel();
 
     const texto =
         lugares[index].titulo +
         ". " +
         lugares[index].descripcion;
 
-    const speech =
-        new SpeechSynthesisUtterance(texto);
+    setTimeout(() => {
 
-    speech.lang = "es-MX";
+        const speech =
+            new SpeechSynthesisUtterance(texto);
 
-    speech.rate = 1;
+        speech.lang = "es-MX";
 
-    speech.pitch = 1;
+        // misma configuración que SÍ funciona
+        speech.rate = 0.9;
+        speech.pitch = 0.85;
+        speech.volume = 1;
 
-    speech.volume = 1;
+        const voces =
+            window.speechSynthesis.getVoices();
 
-    speech.onend = () => {
+        // EXACTAMENTE igual al campus
+        const vozMasculina =
+            voces.find(v => v.name.includes("Jorge")) ||
+            voces.find(v => v.name.includes("Raul")) ||
+            voces.find(v => v.name.includes("Alvaro")) ||
+            voces.find(v =>
+                v.lang.includes("es") &&
+                (
+                    v.name.toLowerCase().includes("male") ||
+                    v.name.toLowerCase().includes("mascul")
+                )
+            ) ||
+            voces.find(v => v.lang.startsWith("es"));
 
-        hablando = false;
-    };
+        if (vozMasculina) {
 
-    speechSynthesis.speak(speech);
+            speech.voice =
+                vozMasculina;
 
-    hablando = true;
+            console.log(
+                "Voz usada:",
+                vozMasculina.name
+            );
+        }
+
+        speech.onstart = () => {
+
+            hablando = true;
+        };
+
+        speech.onend = () => {
+
+            hablando = false;
+        };
+
+        window.speechSynthesis.speak(speech);
+
+    }, 50);
 }
 
 /* SIGUIENTE */
@@ -259,8 +288,9 @@ nextBtn.addEventListener("click", () => {
     }
 
     mostrarLugar();
-});
 
+    hablarTexto();
+});
 /* ANTERIOR */
 
 prevBtn.addEventListener("click", () => {
@@ -277,8 +307,9 @@ prevBtn.addEventListener("click", () => {
     }
 
     mostrarLugar();
-});
 
+    hablarTexto();
+});
 /* AUDIO */
 
 audioBtn.addEventListener("click", () => {
@@ -298,3 +329,4 @@ volverBtn.addEventListener("click", () => {
 /* INICIO */
 
 mostrarLugar();
+hablarTexto();

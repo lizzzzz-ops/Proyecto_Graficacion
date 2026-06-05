@@ -262,8 +262,14 @@ const cerrarInformacion = document.getElementById('cerrarInformacion');
 if (btnInformacion) {
     btnInformacion.addEventListener('click', function (e) {
         e.preventDefault();
+
         informacionPanel.classList.add('activo');
-        if (sidebar) sidebar.classList.remove('active');
+
+        if (sidebar) {
+            sidebar.classList.remove('active');
+        }
+
+        
     });
 }
 
@@ -330,16 +336,48 @@ const areasCampus = {
     16: { nombre: "Cancha Deportiva", desc: "Cancha de usos múltiples para fútbol, básquetbol, voleibol y actividades de educación física.", voz: "Aquí está la Cancha Deportiva del ITHUA, espacio para fútbol, básquetbol y actividades físicas de los alumnos.", foto: "img/campus/cancha.jpg" }
 };
 
-let vozActual = "Hola, soy tu guía del campus. Toca un número para conocer cada área.";
+let vozActual = "¡Bienvenido al recorrido virtual del ITHUA! 🦤 Soy Pelícano, la mascota del campus. Presiona cualquier número del mapa y te mostraré información de cada área.";
 
 function hablar(texto) {
     if (!window.speechSynthesis) return;
+
+    // Detener completamente cualquier voz anterior
     window.speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(texto);
-    u.lang = "es-MX";
-    u.rate = 0.95;
-    u.pitch = 1.1;
-    window.speechSynthesis.speak(u);
+
+    // Pequeño retraso para evitar que se mezcle
+    setTimeout(() => {
+
+        const u = new SpeechSynthesisUtterance(texto);
+
+        u.lang = "es-MX";
+        u.rate = 0.9;
+        u.pitch = 0.85;
+        u.volume = 1;
+
+        const voces = window.speechSynthesis.getVoices();
+
+        // Voz masculina más natural disponible
+        const vozMasculina =
+            voces.find(v => v.name.includes("Jorge")) ||
+            voces.find(v => v.name.includes("Raul")) ||
+            voces.find(v => v.name.includes("Alvaro")) ||
+            voces.find(v =>
+                v.lang.includes("es") &&
+                (
+                    v.name.toLowerCase().includes("male") ||
+                    v.name.toLowerCase().includes("mascul")
+                )
+            ) ||
+            voces.find(v => v.lang.startsWith("es"));
+
+        if (vozMasculina) {
+            u.voice = vozMasculina;
+            console.log("Voz usada:", vozMasculina.name);
+        }
+
+        window.speechSynthesis.speak(u);
+
+    }, 50); // espera 50ms para matar la voz vieja
 }
 
 const puntosEl = document.querySelectorAll('.punto-campus');
@@ -384,32 +422,48 @@ if (puntosEl.length) {
         cerrarInfo.addEventListener('click', () => {
             infoArea.classList.remove('visible');
             puntosEl.forEach(x => x.classList.remove('activo'));
-            if (window.speechSynthesis) window.speechSynthesis.cancel();
+
+            if (window.speechSynthesis) {
+                window.speechSynthesis.cancel();
+            }
         });
+    }
+
+}
+/* =======================================================
+   BOTONES DE VOLVER
+======================================================= */
+
+function cerrarPanel(panel) {
+    if (panel) {
+        panel.classList.remove("active");
+        panel.classList.remove("activo");
     }
 }
 
-/* =======================================================
-   NUEVOS BOTONES DE VOLVER 
-======================================================= */
+/* VOLVER CARRERAS */
+const volverCarrerasTop = document.getElementById("volverCarrerasTop");
 
-const volverCarrerasTop = document.getElementById('volverCarrerasTop');
 if (volverCarrerasTop) {
-    volverCarrerasTop.addEventListener('click', function () {
-        if (cerrarCarreras) cerrarCarreras.click();
+    volverCarrerasTop.addEventListener("click", function () {
+        cerrarPanel(carrerasPanel);
     });
 }
 
-const volverInformacionTop = document.getElementById('volverInformacionTop');
+/* VOLVER INFORMACIÓN */
+const volverInformacionTop = document.getElementById("volverInformacionTop");
+
 if (volverInformacionTop) {
-    volverInformacionTop.addEventListener('click', function () {
-        if (cerrarInformacion) cerrarInformacion.click();
+    volverInformacionTop.addEventListener("click", function () {
+        cerrarPanel(informacionPanel);
     });
 }
 
-const volverActividadesTop = document.getElementById('volverActividadesTop');
+/* VOLVER ACTIVIDADES */
+const volverActividadesTop = document.getElementById("volverActividadesTop");
+
 if (volverActividadesTop) {
-    volverActividadesTop.addEventListener('click', function () {
-        if (cerrarActividades) cerrarActividades.click();
+    volverActividadesTop.addEventListener("click", function () {
+        cerrarPanel(actividadesPanel);
     });
 }
